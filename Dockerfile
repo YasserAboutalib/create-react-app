@@ -1,5 +1,7 @@
 FROM node:latest
 COPY . .
+RUN npm install
+RUN npm start
 RUN ls
 #RUN apt-get update
 #RUN apt-get install -y curl
