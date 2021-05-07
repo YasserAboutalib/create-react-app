@@ -1,7 +1,11 @@
 FROM node:latest
-COPY . .
+WORKDIR /usr/src/app
+COPY package*.json ./
 RUN npm install
-RUN npm start
+COPY . .
+#RUN npm start
+EXPOSE 8080
+CMD [ "node", "app.js" ]
 RUN ls
 #RUN apt-get update
 #RUN apt-get install -y curl
