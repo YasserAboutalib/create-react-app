@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM node:latest
 COPY . .
 RUN ls
 #RUN apt-get update
