@@ -1,12 +1,14 @@
 FROM node:latest
-WORKDIR /usr/src/app
+WORKDIR /app
+ENV PATH /app/node_modules/.bin:$PATH
 COPY package*.json ./
-RUN npm install
-COPY . .
+RUN npm install --silent
+RUN npm install react-scripts@3.4.1 -g --silent
+COPY . ./
 #RUN npm start
 EXPOSE 8080
-CMD [ "node", "app.js" ]
-RUN ls
+CMD [ "npm", "start" ]
+#RUN ls
 #RUN apt-get update
 #RUN apt-get install -y curl
 #RUN apt-get install -y python
